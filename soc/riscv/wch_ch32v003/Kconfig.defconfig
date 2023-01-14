@@ -1,0 +1,17 @@
+# RV32M1 SoC RISC-V core default configuration values
+
+# Copyright (c) 2018 Foundries.io Ltd
+# SPDX-License-Identifier: Apache-2.0
+
+if SOC_WCH_CH32V003
+
+config SOC
+	default "wch_ch32v003"
+
+config NUM_IRQS
+	default 32
+
+config SYS_CLOCK_HW_CYCLES_PER_SEC
+	default 48000000
+
+endif # SOC_WCH_CH32V003
