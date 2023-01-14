@@ -23,6 +23,8 @@ manifest:
       url-base: https://github.com/zephyrproject-rtos
     - name: babblesim
       url-base: https://github.com/BabbleSim
+    - name: juju
+      url-base: https://juju.nz/src/michaelh
 
   group-filter: [-babblesim, -optional]
 
@@ -246,6 +248,12 @@ manifest:
     - name: hal_ti
       revision: b85f86e51fc4d47c4c383d320d64d52d4d371ae4
       path: modules/hal/ti
+      groups:
+        - hal
+    - name: hal_wch
+      remote: juju
+      revision: e1f89f784fbd313d0df533633a038ff5f667f5f4
+      path: modules/hal/wch
       groups:
         - hal
     - name: hal_wurthelektronik
