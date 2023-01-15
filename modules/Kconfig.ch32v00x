@@ -1,0 +1,8 @@
+# Gecko SDK
+
+# Copyright (c) 2017, Christian Taedcke
+# SPDX-License-Identifier: Apache-2.0
+
+config HAS_CH32V00X_HAL
+	bool
+	depends on SOC_WCH_CH32V003
