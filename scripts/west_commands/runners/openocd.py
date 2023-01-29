@@ -270,7 +270,8 @@ class OpenOcdBinaryRunner(ZephyrBinaryRunner):
                pre_load_cmd + load_image +
                verify_image +
                post_verify_cmd +
-               ['-c', 'reset run',
+               ['-c', 'wlink_reset_resume',
+                '-c', 'resume',
                 '-c', 'shutdown'])
         self.check_call(cmd)
 
