@@ -6,4 +6,4 @@ zephyr_sources(
   soc.c
   vector.S
   soc_irq.S
-    )
+)

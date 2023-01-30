@@ -7,11 +7,18 @@
 
 #include <zephyr/toolchain.h>
 
-/* exports */
+/* Exports */
 GTEXT(__start)
 
-/* imports */
+/* Imports */
 GTEXT(__initialize)
+
+SECTION_FUNC(vectors, ivt)
+	.option norvc
+	j       __start
+	.rept (32)
+	.word   _isr_wrapper
+	.endr
 
 SECTION_FUNC(vectors, __start)
 	/* Jump to __initialize */
