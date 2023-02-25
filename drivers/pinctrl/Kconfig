@@ -65,7 +65,6 @@ source "drivers/pinctrl/Kconfig.eos_s3"
 source "drivers/pinctrl/Kconfig.mci_io_mux"
 source "drivers/pinctrl/Kconfig.ene"
 source "drivers/pinctrl/Kconfig.zynqmp"
-
-rsource "renesas/Kconfig"
+source "drivers/pinctrl/Kconfig.wch_afio"
 
 endif # PINCTRL
