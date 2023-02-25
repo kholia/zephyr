@@ -1,0 +1,9 @@
+# Copyright (c) 2022, Joep Buruma
+# SPDX-License-Identifier: Apache-2.0
+
+config PWM_WCH_GPTM
+	bool "WCH General-purpose Timer (GPTM)"
+	default y
+	depends on DT_HAS_WCH_GPTM_ENABLED
+	help
+	  PWM driver WCH CH32V00x GPTM such as TIM2 on the CH32V003

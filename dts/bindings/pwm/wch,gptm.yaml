@@ -1,0 +1,22 @@
+# Copyright (c) 2021 Teslabs Engineering S.L.
+# SPDX-License-Identifier: Apache-2.0
+
+description: WCH General-purpose Timer (GPTM)
+
+compatible: "wch,gptm"
+
+include: [base.yaml, pwm-controller.yaml]
+
+properties:
+  prescaler:
+    type: int
+    default: 1
+    description: Counter prescaler (1 to 65536)
+
+  "#pwm-cells":
+    const: 3
+
+pwm-cells:
+  - channel
+  - period
+  - flags

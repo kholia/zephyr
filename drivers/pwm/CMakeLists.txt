@@ -41,7 +41,7 @@ zephyr_library_sources_ifdef(CONFIG_PWM_MCUX_CTIMER	pwm_mcux_ctimer.c)
 zephyr_library_sources_ifdef(CONFIG_PWM_NUMAKER		pwm_numaker.c)
 zephyr_library_sources_ifdef(CONFIG_PWM_NXP_S32_EMIOS pwm_nxp_s32_emios.c)
 zephyr_library_sources_ifdef(CONFIG_PWM_ENE_KB1200	pwm_ene_kb1200.c)
-
+zephyr_library_sources_ifdef(CONFIG_PWM_WCH_GPTM	pwm_wch_gptm.c)
 zephyr_library_sources_ifdef(CONFIG_USERSPACE   pwm_handlers.c)
 zephyr_library_sources_ifdef(CONFIG_PWM_CAPTURE pwm_capture.c)
 zephyr_library_sources_ifdef(CONFIG_PWM_SHELL   pwm_shell.c)
