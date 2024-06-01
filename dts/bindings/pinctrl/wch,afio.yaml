@@ -33,6 +33,8 @@ child-binding:
           - bias-pull-down
           - drive-open-drain
           - drive-push-pull
+          - output-high
+          - output-low
 
     properties:
       slew-rate:
