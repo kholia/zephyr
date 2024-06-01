@@ -1,0 +1,6 @@
+family:
+  - name: ch32v00x
+    series:
+      - name: ch32v00x
+        socs:
+          - name: ch32v003
