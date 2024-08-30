@@ -13,3 +13,77 @@ config SOC_SERIES
 
 config SOC
 	default "ch32v003" if SOC_CH32V003
+
+config SOC_WCH_CH32V00X_HSI
+	bool "Internal 24 MHz high speed RC oscillator (HSI)"
+	help
+	  Enable the internal 24 MHz RC oscillator at startup.
+	  This can then be selected as the main clock reference for the SOC.
+
+config SOC_WCH_CH32V00X_HSE
+	bool "External 4..25 MHz oscillator (HSE)"
+	help
+	  Enable the high speed external oscillator at startup.
+	  This can then be selected as the main clock reference for the SOC.
+
+config SOC_WCH_CH32V00X_LSI
+	bool "Internal 128 kHz low speed RC oscillator (LSI)"
+	help
+	  Enable the internal 128 kHz low speed oscillator at startup.
+
+config SOC_WCH_CH32V00X_PLL
+	bool "Internal PLL"
+	help
+	  Enable the interal PLL at startup.
+	  This can then be selected as the main clock reference for the SOC.
+
+choice
+	prompt "PLL clock source"
+	default SOC_WCH_CH32V00X_DEFAULT_AS_PLLSRC
+	help
+	  Selects which clock to use as PLL clock.
+
+config SOC_WCH_CH32V00X_DEFAULT_AS_PLLSRC
+	bool "DEFAULT"
+	help
+	  This choice will leave the PLL source in its initial state.
+	  This can be the default reset state, i.e. HSI as PLLSRC, or a
+	  state set by a bootloader.
+
+config SOC_WCH_CH32V00X_HSI_AS_PLLSRC
+	bool "HSI"
+	depends on SOC_WCH_CH32V00X_HSI
+
+config SOC_WCH_CH32V00X_HSE_AS_PLLSRC
+	bool "HSE"
+	depends on SOC_WCH_CH32V00X_HSE
+
+endchoice
+
+choice
+	prompt "Main clock reference"
+	default SOC_WCH_CH32V00X_DEFAULT_AS_SYSCLK
+	help
+	  Selects which clock to use as the main SYSCLK. Other clocks, such
+	  as HCLK, will be derived from SYSCLK.
+
+config SOC_WCH_CH32V00X_DEFAULT_AS_SYSCLK
+	bool "DEFAULT"
+	help
+	  This choice will leave all clocks in their initial state.
+	  This can be the default reset state, i.e. HSI with no PLL, or a
+	  state set by a bootloader.
+
+config SOC_WCH_CH32V00X_PLL_AS_SYSCLK
+	bool "PLL"
+	depends on SOC_WCH_CH32V00X_PLL
+
+config SOC_WCH_CH32V00X_HSI_AS_SYSCLK
+	bool "HSI"
+	depends on SOC_WCH_CH32V00X_HSI
+
+config SOC_WCH_CH32V00X_HSE_AS_SYSCLK
+	bool "HSE"
+	depends on SOC_WCH_CH32V00X_HSE
+
+endchoice
