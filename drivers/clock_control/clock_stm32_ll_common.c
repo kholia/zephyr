@@ -251,10 +251,9 @@ static inline int stm32_clock_control_on(const struct device *dev,
 
 	ARG_UNUSED(dev);
 
-	if (IN_RANGE(pclken->bus, STM32_PERIPH_BUS_MIN, STM32_PERIPH_BUS_MAX) == 0) {
-		/* Attempt to change a wrong periph clock bit */
+	/* if (IN_RANGE(pclken->bus, STM32_PERIPH_BUS_MIN, STM32_PERIPH_BUS_MAX) == 0) {
 		return -ENOTSUP;
-	}
+	} */
 
 	sys_set_bits(DT_REG_ADDR(DT_NODELABEL(rcc)) + pclken->bus,
 		     pclken->enr);
