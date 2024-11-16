@@ -1,0 +1,9 @@
+# SPDX-License-Identifier: Apache-2.0
+
+# Kernel Options due to Low Memory (4k)
+CONFIG_MAIN_STACK_SIZE=512
+CONFIG_IDLE_STACK_SIZE=200
+CONFIG_ISR_STACK_SIZE=512
+
+# GPIO Controller
+CONFIG_GPIO=y
