@@ -1,0 +1,26 @@
+# ST Microelectronics PY32F0 MCU line
+
+# Copyright (c) 2017 RnDity Sp. z o.o.
+# SPDX-License-Identifier: Apache-2.0
+
+config SOC_SERIES_PY32F0X
+	bool
+	select SOC_FAMILY_PY32
+
+config SOC_SERIES
+	default "py32f0x" if SOC_SERIES_PY32F0X
+
+config SOC_PY32F030X4
+	bool
+	select SOC_SERIES_PY32F0X
+
+config SOC_PY32F030X6
+	bool
+	select SOC_SERIES_PY32F0X
+
+config SOC_PY32F030X8
+	bool
+	select SOC_SERIES_PY32F0X
+
+config SOC
+	default "py32f030x6" if SOC_PY32F030X4 || SOC_PY32F030X6

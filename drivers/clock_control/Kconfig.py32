@@ -1,0 +1,43 @@
+# STM32 MCU clock control driver config
+
+# Copyright (c) 2017 Linaro
+# Copyright (c) 2017 RnDity Sp. z o.o.
+# SPDX-License-Identifier: Apache-2.0
+
+menuconfig CLOCK_CONTROL_STM32_CUBE
+	bool "STM32 Reset & Clock Control"
+	depends on SOC_FAMILY_PY32
+	default y
+	select USE_STM32_LL_UTILS
+	help
+	  Enable driver for Reset & Clock Control subsystem found
+	  in STM32 family of MCUs
+
+if CLOCK_CONTROL_STM32_CUBE
+
+DT_STM32_HSI_CLOCK := $(dt_nodelabel_path,clk_hsi)
+DT_STM32_HSI_CLOCK_FREQ := $(dt_node_int_prop_int,$(DT_STM32_HSE_CLOCK),clock-frequency)
+
+config CLOCK_STM32_HSI_CLOCK
+	int "HSI clock value"
+	default "$(DT_STM32_HSI_CLOCK_FREQ)" if "$(dt_nodelabel_enabled,clk_hsi)"
+	default 8000000
+	help
+	  Value of external high-speed clock (HSI). This symbol could be optionally
+
+config CLOCK_STM32_HSI_CLOCK
+	int "HSI clock value"
+	default "$(DT_STM32_HSI_CLOCK_FREQ)" if "$(dt_nodelabel_enabled,clk_hsi)"
+	default 8000000
+	help
+	  Value of external high-speed clock (HSI). This symbol could be optionally
+	  configured using device tree by setting "clock-frequency" value of clk_hsi
+	  node. For instance:
+	  &clk_hsi{
+	  status = "okay";
+	  clock-frequency = <DT_FREQ_M(25)>;
+	  };
+	  Note: Device tree configuration is overridden when current symbol is set:
+	  CONFIG_CLOCK_STM32_HSI_CLOCK=32000000
+
+endif # CLOCK_CONTROL_STM32_CUBE
