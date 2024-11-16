@@ -1,0 +1,14 @@
+/*
+ * Copyright (c) 2017 Linaro Limited
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#include <puya/f0/py32f0.dtsi>
+
+/ {
+	soc {
+		compatible = "st,stm32f030", "st,stm32f0", "simple-bus";
+	};
+
+};

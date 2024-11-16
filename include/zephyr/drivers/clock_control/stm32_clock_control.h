@@ -16,6 +16,8 @@
 #include <zephyr/dt-bindings/clock/stm32c0_clock.h>
 #elif defined(CONFIG_SOC_SERIES_STM32F0X)
 #include <zephyr/dt-bindings/clock/stm32f0_clock.h>
+#elif defined(CONFIG_SOC_SERIES_PY32F0X)
+#include <zephyr/dt-bindings/clock/stm32f0_clock.h>
 #elif defined(CONFIG_SOC_SERIES_STM32F1X)
 #if defined(CONFIG_SOC_STM32F10X_CONNECTIVITY_LINE_DEVICE)
 #include <zephyr/dt-bindings/clock/stm32f10x_clock.h>

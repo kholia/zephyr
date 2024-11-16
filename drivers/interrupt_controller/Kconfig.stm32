@@ -3,7 +3,7 @@
 # Copyright (c) 2016 Open-RnD Sp. z o.o.
 # SPDX-License-Identifier: Apache-2.0
 
-if SOC_FAMILY_STM32
+if (SOC_FAMILY_STM32) || (SOC_FAMILY_PY32)
 
 config EXTI_STM32
 	bool "External Interrupt/Event Controller (EXTI) Driver for STM32 family of MCUs"
