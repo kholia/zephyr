@@ -1,0 +1,13 @@
+identifier: py32f030_startkit
+name: PY32F030 START KIT BOARD
+type: mcu
+arch: arm
+  - zephyr
+toolchain:
+  - gnuarmemb
+  - xtools
+ram: 8
+flash: 64
+supported:
+  - uart
+  - gpio

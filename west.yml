@@ -21,6 +21,8 @@ manifest:
   remotes:
     - name: upstream
       url-base: https://github.com/zephyrproject-rtos
+    - name: kholia
+      url-base: https://github.com/kholia
     - name: babblesim
       url-base: https://github.com/BabbleSim
 
@@ -235,6 +237,12 @@ manifest:
     - name: hal_stm32
       revision: d5fb525486544f7fcec365a89c2ca5ea936618f5
       path: modules/hal/stm32
+      groups:
+        - hal
+    - name: hal_py32
+      revision: master
+      path: modules/hal/py32
+      remote: kholia
       groups:
         - hal
     - name: hal_telink

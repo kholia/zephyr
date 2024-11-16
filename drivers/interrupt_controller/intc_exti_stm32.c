@@ -58,7 +58,8 @@ struct stm32_exti_data {
 static inline uint32_t stm32_exti_linenum_to_src_cfg_line(gpio_pin_t linenum)
 {
 #if defined(CONFIG_SOC_SERIES_STM32L0X) || \
-	defined(CONFIG_SOC_SERIES_STM32F0X)
+	defined(CONFIG_SOC_SERIES_STM32F0X) || \
+	defined(CONFIG_SOC_SERIES_PY32F0X)
 	return ((linenum % 4 * 4) << 16) | (linenum / 4);
 #elif DT_HAS_COMPAT_STATUS_OKAY(st_stm32g0_exti)
 	return ((linenum & 0x3) << (16 + 3)) | (linenum >> 2);

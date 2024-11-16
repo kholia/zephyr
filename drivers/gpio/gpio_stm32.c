@@ -338,13 +338,14 @@ static int gpio_stm32_clock_request(const struct device *dev, bool on)
 	__ASSERT_NO_MSG(dev != NULL);
 
 	/* enable clock for subsystem */
-	const struct device *const clk = DEVICE_DT_GET(STM32_CLOCK_CONTROL_NODE);
+	// const struct device *const clk = DEVICE_DT_GET(STM32_CLOCK_CONTROL_NODE);
+	// Hack -> clk->config is NULL after the above line executes!
 
 	if (on) {
-		ret = clock_control_on(clk,
+		ret = clock_control_on(dev,
 					(clock_control_subsys_t)&cfg->pclken);
 	} else {
-		ret = clock_control_off(clk,
+		ret = clock_control_off(dev,
 					(clock_control_subsys_t)&cfg->pclken);
 	}
 

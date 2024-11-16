@@ -30,6 +30,8 @@ source "drivers/clock_control/Kconfig.nrf"
 
 source "drivers/clock_control/Kconfig.stm32"
 
+source "drivers/clock_control/Kconfig.py32"
+
 source "drivers/clock_control/Kconfig.beetle"
 
 source "drivers/clock_control/Kconfig.fixed"
