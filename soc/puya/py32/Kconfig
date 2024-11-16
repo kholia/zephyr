@@ -1,0 +1,13 @@
+# Copyright (c) 2024 STMicroelectronics
+# SPDX-License-Identifier: Apache-2.0
+
+config SOC_FAMILY_PY32
+	select BUILD_OUTPUT_HEX
+
+if SOC_FAMILY_PY32
+
+rsource "*/Kconfig"
+
+# STM32 wide symbols definitions
+
+endif # SOC_FAMILY_PY32
