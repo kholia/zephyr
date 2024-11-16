@@ -67,6 +67,8 @@ void soc_early_init_hook(void)
 	/* Enable ART Accelerator prefetch */
 	LL_FLASH_EnablePrefetch();
 
+	// for (int j = 0; j < 3000000; j++); // debugger helper
+
 	/* Update CMSIS SystemCoreClock variable (HCLK) */
 	/* At reset, system core clock is set to 8 MHz from HSI */
 	SystemCoreClock = 8000000;
