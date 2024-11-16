@@ -1,0 +1,6 @@
+family:
+- name: py3232
+  series:
+  - name: py32f0x
+    socs:
+    - name: py32f030x6

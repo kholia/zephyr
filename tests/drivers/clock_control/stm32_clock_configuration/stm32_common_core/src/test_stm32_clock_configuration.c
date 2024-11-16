@@ -88,7 +88,8 @@ ZTEST(stm32_sysclck_config, test_pll_src)
 #if defined(CONFIG_SOC_SERIES_STM32L0X) || defined(CONFIG_SOC_SERIES_STM32L1X) || \
 	defined(CONFIG_SOC_SERIES_STM32F0X) || defined(CONFIG_SOC_SERIES_STM32F1X) || \
 	defined(CONFIG_SOC_SERIES_STM32F2X) || defined(CONFIG_SOC_SERIES_STM32F3X) || \
-	defined(CONFIG_SOC_SERIES_STM32F4X) || defined(CONFIG_SOC_SERIES_STM32F7X)
+	defined(CONFIG_SOC_SERIES_STM32F4X) || defined(CONFIG_SOC_SERIES_STM32F7X) || \
+	define(CONFIG_SOC_SERIES_PY32F0X)
 #define RCC_PLLSOURCE_NONE 0
 	/* check RCC_CR_PLLON bit to enable/disable the PLL, but no status function exist */
 	if (READ_BIT(RCC->CR, RCC_CR_PLLON) == RCC_CR_PLLON) {

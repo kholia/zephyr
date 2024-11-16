@@ -11,10 +11,13 @@
 #define ZEPHYR_INCLUDE_DRIVERS_CLOCK_CONTROL_STM32_CLOCK_CONTROL_H_
 
 #include <zephyr/drivers/clock_control.h>
+#pragma message "Compiling " __FILE__ "..."
 
 #if defined(CONFIG_SOC_SERIES_STM32C0X)
 #include <zephyr/dt-bindings/clock/stm32c0_clock.h>
 #elif defined(CONFIG_SOC_SERIES_STM32F0X)
+#include <zephyr/dt-bindings/clock/stm32f0_clock.h>
+#elif defined(CONFIG_SOC_SERIES_PY32F0X)
 #include <zephyr/dt-bindings/clock/stm32f0_clock.h>
 #elif defined(CONFIG_SOC_SERIES_STM32F1X)
 #if defined(CONFIG_SOC_STM32F10X_CONNECTIVITY_LINE_DEVICE)

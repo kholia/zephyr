@@ -1,11 +1,11 @@
 /*
- * Copyright (c) 2019 Antony Pavlov <antonynpavlov@gmail.com>
+ * Copyright (c) 2021 Sebastian Schwabe <sebastian.schwabe@mailbox.tu-dresden.de>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 #include <mem.h>
-#include <st/f0/stm32f030.dtsi>
+#include <puya/f0/py32f031.dtsi>
 
 / {
 	sram0: memory@20000000 {
@@ -15,7 +15,7 @@
 	soc {
 		flash-controller@40022000 {
 			flash0: flash@8000000 {
-				reg = <0x08000000 DT_SIZE_K(64)>;
+				reg = <0x08000000 DT_SIZE_K(32)>;
 			};
 		};
 	};
