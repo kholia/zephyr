@@ -1,0 +1,6 @@
+board:
+  name: py32f030_startkit
+  full_name: PYM32F030 Start Kit BOARD
+  vendor: puya
+  socs:
+    - name: py32f030x4
